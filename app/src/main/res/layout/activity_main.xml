@@ -5,17 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_id"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btn_test"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_move"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="이동"
+        android:textSize="50sp"/>
+
+    <EditText
+        android:id="@+id/edit_test"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="버튼"/>
+        android:textSize="40sp"
+        android:hint="값을 입력"
+        android:textColorHint="#6C6C6C"/>
 
 </LinearLayout>
