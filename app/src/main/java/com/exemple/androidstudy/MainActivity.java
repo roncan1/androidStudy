@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_move; // 버튼 생성
     EditText edit_test;
+    ImageView toast_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,SubActivity.class); //인텐트를 생성하며 지금MainActivity에서 SubActivity로 넘어간다고 선언
                 intent.putExtra("toss", a); // putExtra를 이용하여 toss라는 이름안에 a값을 넣기
                 startActivity(intent); // 액티비티 이동
+            }
+        });
+
+        toast_img = findViewById(R.id.toast_test);
+        toast_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "토스트 테스트",Toast.LENGTH_LONG).show();
             }
         });
 

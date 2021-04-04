@@ -22,5 +22,12 @@
         android:textSize="40sp"
         android:hint="값을 입력"
         android:textColorHint="#6C6C6C"/>
+    
+    <ImageView
+        android:id="@+id/toast_test"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:src="@drawable/emg_test"/>
+
 
 </LinearLayout>
