@@ -9,7 +9,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서브 액티비티"
-        android:textSize="60sp"/>
+        android:textSize="20sp"/>
+
+    <ListView
+        android:id="@+id/list_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 </LinearLayout>

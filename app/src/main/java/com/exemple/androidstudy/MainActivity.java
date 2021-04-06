@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); //액티비티와 xml파일을 연결
 
-        btn_move = findViewById(R.id.btn_move); //변수로 생성한 버튼과 xml속 버튼을 연결
-        edit_test = findViewById(R.id.edit_test);
+        btn_move = (Button) findViewById(R.id.btn_move); //변수로 생성한 버튼과 xml속 버튼을 연결
+        edit_test = (EditText) findViewById(R.id.edit_test);
 
         btn_move.setOnClickListener(new View.OnClickListener() {
             @Override
