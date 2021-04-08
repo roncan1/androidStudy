@@ -29,5 +29,10 @@
         android:layout_height="110dp"
         android:src="@drawable/emg_test"/>
 
+    <EditText
+        android:id="@+id/ET_savetest"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
