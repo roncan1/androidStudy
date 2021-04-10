@@ -7,19 +7,37 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="가나다라마바사아"
-        android:textSize="20sp"
-        android:textColor="#43FF9E"
-        />
 
-    <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_move"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="이동"
+        android:textSize="50sp"/>
+
+    <EditText
+        android:id="@+id/edit_test"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textColor="#FF0000"
-        android:text="자차카타파하"
-        />
+        android:textSize="40sp"
+        android:hint="값을 입력"
+        android:textColorHint="#6C6C6C"/>
+    
+    <ImageView
+        android:id="@+id/toast_test"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:src="@drawable/emg_test"/>
+
+    <EditText
+        android:id="@+id/ET_savetest"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"/>
+
+    <WebView
+        android:id="@+id/webview_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 </LinearLayout>
