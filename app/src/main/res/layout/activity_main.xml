@@ -9,13 +9,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_open"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="오픈"/>
+
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="스레드 시작"/>
+
+        <Button
+            android:id="@+id/btn_and"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="스레드 종료"/>
     </LinearLayout>
 
     <include layout="@layout/activity_drawer"/>
