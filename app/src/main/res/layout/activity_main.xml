@@ -30,6 +30,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="스레드 종료"/>
+
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="다이얼로그"/>
+
+        <TextView
+            android:id="@+id/tv_dia_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="테스트"
+            android:textSize="20pt"/>
     </LinearLayout>
 
     <include layout="@layout/activity_drawer"/>
