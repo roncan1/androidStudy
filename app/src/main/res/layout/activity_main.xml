@@ -43,6 +43,18 @@
             android:layout_height="wrap_content"
             android:text="테스트"
             android:textSize="20pt"/>
+
+        <Button
+            android:id="@+id/btn_ser_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="서비스 시작"/>
+
+        <Button
+            android:id="@+id/btn_ser_and"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="서비스 종료"/>
     </LinearLayout>
 
     <include layout="@layout/activity_drawer"/>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     View drawerView;
-    Button btn_start, btn_and, btn_dialog;
+    Button btn_start, btn_and, btn_dialog, btn_ser_start, btn_ser_and;
     Thread thread;
     Boolean isThread = false;
     TextView tv_dia_result;
@@ -30,6 +31,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btn_ser_start = (Button)findViewById(R.id.btn_ser_start);
+        btn_ser_and = (Button)findViewById(R.id.btn_ser_and);
+
+        btn_ser_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startService(new Intent(getApplicationContext(), MusicService.class));
+
+            }
+        });
+
+        btn_ser_and.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopService(new Intent(getApplicationContext(), MusicService.class));
+
+            }
+        });
 
         btn_dialog = (Button)findViewById(R.id.btn_dialog);
         tv_dia_result = (TextView)findViewById(R.id.tv_dia_result);
