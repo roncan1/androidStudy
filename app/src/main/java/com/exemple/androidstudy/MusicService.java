@@ -20,14 +20,14 @@ public class MusicService extends Service {
     public void onCreate() { // 초기화
         super.onCreate();
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.sound_exem);
+        mediaPlayer = MediaPlayer.create(this, R.raw.sound_exem); //음악 지정
         mediaPlayer.setLooping(false);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) { // 시작
 
-        mediaPlayer.start();
+        mediaPlayer.start(); // 음악 시작
 
         return super.onStartCommand(intent, flags, startId);
     }
@@ -36,6 +36,6 @@ public class MusicService extends Service {
     public void onDestroy() { // 종료
         super.onDestroy();
 
-        mediaPlayer.stop();
+        mediaPlayer.stop(); // 음악 종료
     }
 }

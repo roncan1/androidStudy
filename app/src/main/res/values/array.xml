@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test">
+        <item>Spinner test 1</item>
+        <item>Spinner test 2</item>
+        <item>Spinner test 3</item>
+    </string-array>
+
+</resources>

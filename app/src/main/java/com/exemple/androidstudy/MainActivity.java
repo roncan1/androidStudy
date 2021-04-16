@@ -13,8 +13,10 @@ import android.os.Message;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +27,29 @@ public class MainActivity extends AppCompatActivity {
     Button btn_start, btn_and, btn_dialog, btn_ser_start, btn_ser_and;
     Thread thread;
     Boolean isThread = false;
-    TextView tv_dia_result;
+    TextView tv_dia_result, tv_spinner_result;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        spinner = (Spinner)findViewById(R.id.spinner);
+        tv_spinner_result = (TextView)findViewById(R.id.tv_spinner_result);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                tv_spinner_result.setText(adapterView.getItemAtPosition(i).toString());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         btn_ser_start = (Button)findViewById(R.id.btn_ser_start);
         btn_ser_and = (Button)findViewById(R.id.btn_ser_and);
