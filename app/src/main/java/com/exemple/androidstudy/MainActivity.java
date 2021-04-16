@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+                tv_spinner_result.setText("선택되지 않음");
 
             }
         });
