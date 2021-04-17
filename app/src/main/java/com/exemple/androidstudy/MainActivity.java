@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Boolean isThread = false;
     TextView tv_dia_result, tv_spinner_result;
     Spinner spinner;
+    long backBtnTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +39,15 @@ public class MainActivity extends AppCompatActivity {
         spinner = (Spinner)findViewById(R.id.spinner);
         tv_spinner_result = (TextView)findViewById(R.id.tv_spinner_result);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // 무엇이 select 되었는진 확인
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {// 무엇이 셀렉 되었을떄
                 tv_spinner_result.setText(adapterView.getItemAtPosition(i).toString());
+                // 셀렉된 아이템을 문자열로 바꿔서 tv_spinner_result에 저장
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                tv_spinner_result.setText("선택되지 않음");
-
             }
         });
 
@@ -171,6 +171,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime;
+
+        if (0 <= gapTime && 2000 >= gapTime)
+        {
+            super.onBackPressed();
+        } else {
+            backBtnTime = curTime;
+            Toast.makeText(this, "한번더 눌러야 종료", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
