@@ -67,6 +67,15 @@
             android:layout_height="40dp"
             android:text="드롭다운 결과"/>
 
+        <com.github.ybq.android.spinkit.SpinKitView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.CubeGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/colorAccent" />
+
     </LinearLayout>
 
     <include layout="@layout/activity_drawer"/>
