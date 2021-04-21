@@ -56,16 +56,45 @@
             android:layout_height="wrap_content"
             android:text="서비스 종료"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="left">
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:entries="@array/test"/>
-        <TextView
-            android:id="@+id/tv_spinner_result"
-            android:layout_width="150dp"
+
+            <TextView
+                android:id="@+id/tv_spinner_result"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="드롭다운 결과"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="드롭다운 결과"/>
+            android:orientation="horizontal"
+            android:gravity="left">
+
+            <Button
+                android:id="@+id/btn_music_play"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="재생" />
+
+            <Button
+                android:id="@+id/btn_music_stop"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="중지" />
+        </LinearLayout>
 
         <com.github.ybq.android.spinkit.SpinKitView
             xmlns:app="http://schemas.android.com/apk/res-auto"

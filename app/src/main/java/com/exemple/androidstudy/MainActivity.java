@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -24,17 +25,40 @@ public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     View drawerView;
-    Button btn_start, btn_and, btn_dialog, btn_ser_start, btn_ser_and;
+    Button btn_start, btn_and, btn_dialog, btn_ser_start, btn_ser_and,
+            btn_music_play, btn_music_stop;
     Thread thread;
     Boolean isThread = false;
     TextView tv_dia_result, tv_spinner_result;
     Spinner spinner;
     long backBtnTime = 0;
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btn_music_play = (Button)findViewById(R.id.btn_music_play);
+        btn_music_stop = (Button)findViewById(R.id.btn_music_stop);
+
+        btn_music_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.music);
+                mediaPlayer.start();
+            }
+        });
+
+        btn_music_stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                    mediaPlayer.reset();
+                }
+            }
+        });
 
         spinner = (Spinner)findViewById(R.id.spinner);
         tv_spinner_result = (TextView)findViewById(R.id.tv_spinner_result);
@@ -214,4 +238,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
 }
