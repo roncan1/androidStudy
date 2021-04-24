@@ -20,6 +20,9 @@
         </activity>
         <activity android:name=".SubActivity"></activity>
         <service android:name=".MusicService"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBYauR5MTOQ_ouQx_DQphttII6s-tzcdCQ" />
     </application>
 
 </manifest>

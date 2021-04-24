@@ -105,6 +105,12 @@
             android:layout_gravity="center"
             app:SpinKit_Color="@color/colorAccent" />
 
+        <fragment
+            android:id="@+id/googleMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.google.android.gms.maps.MapFragment"/>
+
     </LinearLayout>
 
     <include layout="@layout/activity_drawer"/>
