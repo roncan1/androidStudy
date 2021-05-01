@@ -19,5 +19,18 @@
         android:layout_height="wrap_content"
         android:text="메뉴"
         android:gravity="center"/>
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="셀렉터 테스트"
+        android:background="@drawable/selector_button"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_img"/>
 
 </LinearLayout>
