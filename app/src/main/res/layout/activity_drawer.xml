@@ -33,10 +33,7 @@
         android:layout_height="150dp"
         android:background="@drawable/selector_img"/>
 
-    <VideoView
-        android:id="@+id/videoview"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+
 
 
 </LinearLayout>
