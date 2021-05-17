@@ -10,6 +10,7 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,9 +20,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.MediaController;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -45,11 +48,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     MediaPlayer mediaPlayer;
     FragmentManager fragmentManager;
     MapFragment mapFragment;
+    VideoView videoView;
+    MediaController mediaController;
+    String videoURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        videoView = findViewById(R.id.videoview);
+        mediaController = new MediaController(this);
+        mediaController.setAnchorView(videoView);
+        Uri uri = Uri.parse(videoURL);
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(uri);
+        videoView.start();
+
 
         fragmentManager = getFragmentManager();
         mapFragment = (MapFragment) fragmentManager.findFragmentById(R.id.googleMap);
